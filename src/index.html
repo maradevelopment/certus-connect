@@ -6,18 +6,33 @@
     <div class="site-container">
       @include('partials/header.html')
       <main class="main">
+        <!-- Первый экран (если есть) -->
+        @include('partials/hero.html')
+
         <!-- О компании -->
         @include('partials/about.html')
+
+        <!-- Услуги или преимущества -->
+        @include('partials/features.html')
+
         <!-- Как это работает -->
         @include('partials/how-it-works.html')
+
+        <!-- Портфолио -->
+        @include('partials/portfolio.html')
+
         <!-- Отзывы -->
         @include('partials/testimonials.html')
-        <!-- Тарифы  -->
+
+        <!-- Тарифы -->
         @include('partials/pricing.html')
+
         <!-- Часто задаваемые вопросы -->
         @include('partials/faq.html')
+
         <!-- Контактная информация и форма -->
         @include('partials/contact.html')
+
         <!-- Призыв к действию -->
         @include('partials/cta.html')
       </main>
