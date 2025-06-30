@@ -1,7 +1,10 @@
 import * as THREE from "three";
 import Lenis from "lenis";
 import GLOBE from "vanta/src/vanta.globe.js";
+import gsap from "gsap";
+import ScrollTrigger from "gsap/ScrollTrigger.js";
 
+// Lenis, Vanta.js
 document.addEventListener("DOMContentLoaded", () => {
   const preloader = document.querySelector(".preloader");
 
@@ -38,3 +41,33 @@ function raf(time) {
 }
 
 requestAnimationFrame(raf);
+
+// GSAP
+
+gsap.registerPlugin(ScrollTrigger);
+
+gsap.from("#about-image", {
+  scrollTrigger: {
+    trigger: "#about",
+    start: "top 80%",
+    toggleActions: "play none none none",
+  },
+  x: -100,
+  opacity: 0,
+  scale: 0.9,
+  duration: 1.5,
+  ease: "power3.out",
+});
+
+gsap.from(["#about-title", "#about-mark", "#about-description"], {
+  scrollTrigger: {
+    trigger: "#about",
+    start: "top 80%",
+    toggleActions: "play none none none",
+  },
+  x: 100,
+  opacity: 0,
+  duration: 1.5,
+  ease: "power3.out",
+  stagger: 0.3,
+});
