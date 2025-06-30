@@ -13,8 +13,8 @@ document.addEventListener("DOMContentLoaded", () => {
     mouseControls: true,
     touchControls: true,
     gyroControls: false,
-    minWidth: 200.0,
-    minHeight: 200.0,
+    minWidth: 320.0,
+    minHeight: 500.0,
     color: "#f20a5c",
     backgroundColor: "#100005",
     THREE,
@@ -46,6 +46,7 @@ requestAnimationFrame(raf);
 
 gsap.registerPlugin(ScrollTrigger);
 
+// ABOUT
 gsap.from("#about-image", {
   scrollTrigger: {
     trigger: "#about",
@@ -70,4 +71,33 @@ gsap.from(["#about-title", "#about-mark", "#about-description"], {
   duration: 1.5,
   ease: "power3.out",
   stagger: 0.3,
+});
+
+// FEATURES
+
+gsap.from("#features-title", {
+  scrollTrigger: {
+    trigger: "#features-header",
+    start: "top 80%",
+    toggleActions: "play none none none",
+  },
+  y: 50,
+  opacity: 0,
+  duration: 1,
+  ease: "power3.out",
+});
+
+gsap.utils.toArray("#features-list > div").forEach((elem, i) => {
+  gsap.from(elem, {
+    scrollTrigger: {
+      trigger: elem,
+      start: "top 85%",
+      toggleActions: "play none none none",
+    },
+    y: 30,
+    opacity: 0,
+    duration: 0.8,
+    delay: i * 0.2,
+    ease: "power2.out",
+  });
 });
