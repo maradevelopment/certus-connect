@@ -1,3 +1,28 @@
-html {
-  scroll-behavior: unset !important;
+@media (prefers-reduced-motion: no-preference) {
+  :root {
+    scroll-behavior: unset !important;
+  }
+}
+
+html.lenis,
+html.lenis body {
+  height: auto !important;
+}
+
+.lenis:not(.lenis-autoToggle).lenis-stopped {
+  overflow: clip !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain !important;
+}
+
+.lenis.lenis-smooth iframe {
+  pointer-events: none !important;
+}
+
+.lenis.lenis-autoToggle {
+  transition-property: overflow !important;
+  transition-duration: 1ms !important;
+  transition-behavior: allow-discrete !important;
 }
