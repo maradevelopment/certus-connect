@@ -4,6 +4,11 @@
   }
 }
 
+html,
+body {
+  overflow-x: hidden;
+}
+
 html.lenis,
 html.lenis body {
   height: auto !important;
