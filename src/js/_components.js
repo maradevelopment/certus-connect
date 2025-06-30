@@ -12,6 +12,8 @@ document.addEventListener("DOMContentLoaded", () => {
     gyroControls: false,
     minWidth: 200.0,
     minHeight: 200.0,
+    color: "#f20a5c",
+    backgroundColor: "#100005",
     THREE,
   });
 
