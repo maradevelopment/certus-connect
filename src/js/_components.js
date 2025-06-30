@@ -25,6 +25,8 @@ document.addEventListener("DOMContentLoaded", () => {
   }, 5000);
 });
 
+// Lenis
+
 const lenis = new Lenis({
   duration: 1.8,
   easing: (t) => t,
@@ -42,6 +44,17 @@ function raf(time) {
 
 requestAnimationFrame(raf);
 
+document.querySelectorAll('a[href^="#"]').forEach((link) => {
+  link.addEventListener("click", (e) => {
+    e.preventDefault();
+    const targetId = link.getAttribute("href").substring(1);
+    const targetElement = document.getElementById(targetId);
+    if (targetElement) {
+      lenis.scrollTo(targetElement, { duration: 1.2, easing: (t) => t });
+    }
+  });
+});
+
 // GSAP
 
 gsap.registerPlugin(ScrollTrigger);
@@ -49,7 +62,7 @@ gsap.registerPlugin(ScrollTrigger);
 // ABOUT
 gsap.from("#about-image", {
   scrollTrigger: {
-    trigger: "#about",
+    trigger: "#about-section",
     start: "top 80%",
     toggleActions: "play none none none",
   },
@@ -62,7 +75,7 @@ gsap.from("#about-image", {
 
 gsap.from(["#about-title", "#about-mark", "#about-description"], {
   scrollTrigger: {
-    trigger: "#about",
+    trigger: "#about-section",
     start: "top 80%",
     toggleActions: "play none none none",
   },
