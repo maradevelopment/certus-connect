@@ -26,3 +26,9 @@ html.lenis body {
   transition-duration: 1ms !important;
   transition-behavior: allow-discrete !important;
 }
+
+.section-border-shadow {
+  border-top: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
+  box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.15);
+}

@@ -101,3 +101,70 @@ gsap.utils.toArray("#features-list > div").forEach((elem, i) => {
     ease: "power2.out",
   });
 });
+
+// CONTACT
+
+gsap.from("#contact-title", {
+  scrollTrigger: {
+    trigger: "#contact-section",
+    start: "top 80%", // когда верх секции достигнет 80% высоты экрана
+    toggleActions: "play none none none",
+  },
+  y: 50,
+  opacity: 0,
+  duration: 1,
+  ease: "power3.out",
+});
+
+gsap.from("#contact-text", {
+  scrollTrigger: {
+    trigger: "#contact-section",
+    start: "top 75%",
+    toggleActions: "play none none none",
+  },
+  y: 50,
+  opacity: 0,
+  duration: 1,
+  delay: 0.3,
+  ease: "power3.out",
+});
+
+gsap.from("#contact-button", {
+  scrollTrigger: {
+    trigger: "#contact-section",
+    start: "top 70%",
+    toggleActions: "play none none none",
+  },
+  y: 50,
+  opacity: 0,
+  duration: 1,
+  delay: 0.6,
+  ease: "power3.out",
+});
+
+// CTA
+
+gsap.from("#get-started-title", {
+  scrollTrigger: {
+    trigger: "#get-started-section",
+    start: "top 80%",
+    toggleActions: "play none none none",
+  },
+  y: 50,
+  opacity: 0,
+  duration: 1,
+  ease: "power3.out",
+});
+
+gsap.from("#get-started-text", {
+  scrollTrigger: {
+    trigger: "#get-started-section",
+    start: "top 75%",
+    toggleActions: "play none none none",
+  },
+  y: 50,
+  opacity: 0,
+  duration: 1,
+  delay: 0.3,
+  ease: "power3.out",
+});
